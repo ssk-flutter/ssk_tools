@@ -1,16 +1,43 @@
-# ssk_tools
+# SSK Tools
 
-A new Flutter project.
+**SSK Tools** is a Flutter-based web application that provides a variety of tools for developers.  
+This project aims to help developers perform their tasks more efficiently by offering a collection of essential tools.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## 🌟 Purpose
+- The goal is to integrate commonly used tools in the development process into one platform to enhance productivity.
 
-A few resources to get you started if this is your first Flutter project:
+---
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## 🚀 Key Information
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- **Development Language**: Dart / Flutter  
+- **Website**: [https://ssk-tools.web.app](https://ssk-tools.web.app)
+
+---
+
+## 📋 Key Features
+
+### 1. Text zlib-base64 Encoding
+- Compress text data using `zlib` and encode it with `base64` for convenient data transformation.
+- A useful tool for efficiently handling data transmission and storage.
+
+### 2. Upcoming Features
+- Various additional development support tools will be added soon.  
+- **Examples of upcoming features**: Text decoding, JSON formatting, code converters, etc.
+
+---
+### 🌐 Website Link
+-	SSK Tools Web Application: https://ssk-tools.web.app
+
+### 📞 Contact
+-	Email: developer.kss@gmail.com
+-	GitHub: [ssk-flutter](https://github.com/ssk-flutter)
+
+### 🛠️ TODO
+-	Add zlib-base64 decoding functionality
+-	JSON formatter tool
+-	Code converter and optimization tools
+-	User customization options
+-	Support for dark mode
