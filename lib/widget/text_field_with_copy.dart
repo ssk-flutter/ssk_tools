@@ -39,7 +39,8 @@ class _TextFieldWithCopyState extends State<TextFieldWithCopy> {
               label:
                   Text('${widget.labelText}: ${widget.controller.text.length}'),
             ),
-            maxLines: null,
+            minLines: 1,
+            maxLines: 5,
           ),
         ),
         IconButton(
