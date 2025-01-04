@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class TextFieldWithCopy extends StatelessWidget {
+class TextFieldWithCopy extends StatefulWidget {
   const TextFieldWithCopy({
     super.key,
     required this.controller,
@@ -16,25 +16,38 @@ class TextFieldWithCopy extends StatelessWidget {
   final String clipboardCopiedText;
 
   @override
+  State<TextFieldWithCopy> createState() => _TextFieldWithCopyState();
+}
+
+class _TextFieldWithCopyState extends State<TextFieldWithCopy> {
+  @override
+  void initState() {
+    super.initState();
+
+    widget.controller.addListener(() => setState(() {}));
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Row(
       children: [
         Expanded(
           child: TextField(
-            controller: controller,
+            controller: widget.controller,
             decoration: InputDecoration(
-              hintText: hintText,
-              label: Text(labelText),
+              hintText: widget.hintText,
+              label:
+                  Text('${widget.labelText}: ${widget.controller.text.length}'),
             ),
             maxLines: null,
           ),
         ),
         IconButton(
             onPressed: () {
-              if (controller.text.isEmpty) return;
-              Clipboard.setData(ClipboardData(text: controller.text));
-              ScaffoldMessenger.of(context)
-                  .showSnackBar(SnackBar(content: Text(clipboardCopiedText)));
+              if (widget.controller.text.isEmpty) return;
+              Clipboard.setData(ClipboardData(text: widget.controller.text));
+              ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: Text(widget.clipboardCopiedText)));
             },
             icon: Icon(Icons.copy)),
       ],
