@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:ssk_tools/core/zlib_base64.dart';
 
 import '../../widget/text_field_with_copy.dart';
@@ -16,6 +15,16 @@ class _TextCompressPageState extends State<TextCompressPage> {
   final compressOutputController = TextEditingController();
   final decompressInputController = TextEditingController();
   final decompressOutputController = TextEditingController();
+
+  @override
+  void dispose() {
+    compressInputController.dispose();
+    compressOutputController.dispose();
+    decompressInputController.dispose();
+    decompressOutputController.dispose();
+
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
