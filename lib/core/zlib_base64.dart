@@ -1,16 +1,16 @@
 import 'dart:convert';
-import 'dart:io';
+import 'package:archive/archive.dart';
 
 class ZlibBase64 {
   Future<String> compress(String text) async {
     final data = utf8.encode(text);
-    final compressed = zlib.encode(data);
+    final compressed = GZipEncoder().encode(data);
     return base64.encode(compressed);
   }
 
   Future<String> decompress(String text) async {
     final compressed = base64.decode(text);
-    final data = zlib.decode(compressed);
+    final data = GZipDecoder().decodeBytes(compressed);
     return utf8.decode(data);
   }
 }
